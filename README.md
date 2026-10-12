@@ -1,10 +1,10 @@
-RƎ:ALYZE V13 — sửa vai trò và đồng bộ phòng
+RƎ:ALYZE V14 — Thư viện nhạc chung cho Host
 
-1. Dùng lại config.js của website đang hoạt động, chỉ điền Supabase URL và publishable/anon key.
-2. Chạy supabase/UPGRADE_V13.sql trong Supabase SQL Editor một lần sau khi đã chạy schema và nâng cấp V11.
-3. Đăng toàn bộ file lên hosting và tải lại trang bằng Ctrl+F5.
-4. Kiểm tra với 3 trình duyệt độc lập (hoặc 3 thiết bị): Host, BGK, Thí sinh. Không dùng cùng một phiên đăng nhập Supabase để giả lập 3 vai trò.
+1. Sao lưu database trước khi nâng cấp.
+2. Chạy supabase/UPGRADE_V14_SHARED_LIBRARY.sql trong SQL Editor.
+3. Đăng lại index.html, app.js, style.css và config.js lên GitHub Pages. Giữ nguyên URL và publishable key cũ.
+4. Host tải nhạc vào thư viện chung; khi đề cử, web tạo bản ghi cho phòng hiện tại mà không upload lại file.
+5. Dữ liệu đã tải ở các phòng trước được đưa vào thư viện Host theo owner_id.
+6. File Storage chưa được tự xóa khi xóa mục khỏi thư viện để tránh làm hỏng bài đang dùng ở phòng khác.
 
-Vai trò được kiểm tra từ ra_members trên database, không được suy ra từ URL. Link/mã mời không cấp quyền Host.
-Realtime đăng ký thay đổi phòng và thành viên; website còn có đồng bộ dự phòng 3 giây khi tab đang hiển thị.
-V13 chưa phải bản đã kiểm thử end-to-end trên Supabase thực tế của bạn.
+Chưa kiểm thử kết nối với dự án Supabase thực tế.
