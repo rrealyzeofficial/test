@@ -1,5 +1,10 @@
-RƎ:ALYZE V12.1 — Cấu hình Supabase chung
+RƎ:ALYZE V13 — sửa vai trò và đồng bộ phòng
 
-Điền URL dự án và khóa publishable/anon vào config.js rồi đăng toàn bộ website lên GitHub Pages. Người tham gia chỉ nhập tên và mã mời hoặc dùng link. Không đưa service_role hoặc secret key vào config.js.
+1. Dùng lại config.js của website đang hoạt động, chỉ điền Supabase URL và publishable/anon key.
+2. Chạy supabase/UPGRADE_V13.sql trong Supabase SQL Editor một lần sau khi đã chạy schema và nâng cấp V11.
+3. Đăng toàn bộ file lên hosting và tải lại trang bằng Ctrl+F5.
+4. Kiểm tra với 3 trình duyệt độc lập (hoặc 3 thiết bị): Host, BGK, Thí sinh. Không dùng cùng một phiên đăng nhập Supabase để giả lập 3 vai trò.
 
-V12.1 ưu tiên cấu hình từ config.js thay vì cấu hình cũ trong localStorage. Không cần cập nhật SQL so với V11.
+Vai trò được kiểm tra từ ra_members trên database, không được suy ra từ URL. Link/mã mời không cấp quyền Host.
+Realtime đăng ký thay đổi phòng và thành viên; website còn có đồng bộ dự phòng 3 giây khi tab đang hiển thị.
+V13 chưa phải bản đã kiểm thử end-to-end trên Supabase thực tế của bạn.
