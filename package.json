@@ -1,0 +1,1 @@
+{"name":"realyze-testing-supabase","version":"2.0.0","private":true,"type":"module","scripts":{"start":"vite --host 0.0.0.0"},"dependencies":{"@supabase/supabase-js":"^2.57.0","vite":"^7.1.0"}}
